@@ -1,0 +1,27 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Publish release with cheatsheet.skill
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cat > notes.md <<'EOF'
+          **Download `cheatsheet.skill` below** and upload it in Claude: Settings → Capabilities → Skills.
+
+          Claude Code: `/plugin marketplace add ${{ github.repository }}` then `/plugin install cheatsheet@cheatsheet`.
+          EOF
+          gh release create "$GITHUB_REF_NAME" dist/cheatsheet.skill \
+            --title "CheatSheet $GITHUB_REF_NAME" \
+            --notes-file notes.md

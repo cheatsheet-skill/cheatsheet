@@ -1,0 +1,13 @@
+schema_version: "1.1"
+name: threads-minimal-diff
+expected_outcome: |
+  primos.c is modified in place to count primes with pthreads, splitting [1, N] into
+  consecutive blocks, one per thread, with the thread count as the second argument.
+  The diff against the original contains only what parallelism needs (pthread include,
+  thread function, per-thread data, create/join, argument parsing for num_hilos).
+  Everything else (es_primo, names, comments, style, output message) is identical.
+  It compiles with the given command and prints the same result as the sequential
+  version. No extras (timing, input validation beyond what exists, tests, README).
+  A AI_USAGE.md exists, and the chat summary lists each change. No AI mention in primos.c.
+context:
+  scaffold_script: place-files.sh

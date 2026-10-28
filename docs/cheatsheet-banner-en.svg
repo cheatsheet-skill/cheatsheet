@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="420" viewBox="0 0 1280 420" role="img" aria-label="CheatSheet, a Claude skill for university assignments">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1b1a"/>
+      <stop offset="1" stop-color="#101826"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0.18" cy="0.2" r="0.6">
+      <stop offset="0" stop-color="#2f6f5e" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#2f6f5e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.9" cy="0.95" r="0.55">
+      <stop offset="0" stop-color="#d97757" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#d97757" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="title" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#9fe3cc"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="1"/>
+    </pattern>
+    <clipPath id="frame"><rect width="1280" height="420" rx="24"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1280" height="420" fill="url(#bg)"/>
+    <rect width="1280" height="420" fill="url(#grid)"/>
+    <rect width="1280" height="420" fill="url(#glow1)"/>
+    <rect width="1280" height="420" fill="url(#glow2)"/>
+
+    <!-- left: title block -->
+    <g font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, sans-serif">
+      <rect x="72" y="70" width="212" height="34" rx="17" fill="#ffffff" fill-opacity="0.08" stroke="#9fe3cc" stroke-opacity="0.35"/>
+      <circle cx="94" cy="87" r="6" fill="#d97757"/>
+      <text x="110" y="93" font-size="16" font-weight="600" fill="#cfeee3" letter-spacing="0.6">CLAUDE SKILL</text>
+
+      <text x="68" y="196" font-size="96" font-weight="800" fill="url(#title)" letter-spacing="-3">CheatSheet</text>
+      <text x="72" y="246" font-size="27" fill="#d6e2df">Your AI study partner for university assignments.</text>
+      <text x="72" y="282" font-size="27" fill="#d6e2df">At <tspan fill="#9fe3cc" font-weight="700">your</tspan> level. Minimal changes. Honest AI disclosure.</text>
+
+      <g font-size="17" font-weight="600" fill="#e8f3ef">
+        <rect x="72" y="320" width="82" height="36" rx="10" fill="#ffffff" fill-opacity="0.07"/>
+        <text x="94" y="344">Code</text>
+        <rect x="164" y="320" width="96" height="36" rx="10" fill="#ffffff" fill-opacity="0.07"/>
+        <text x="184" y="344">Essays</text>
+        <rect x="270" y="320" width="84" height="36" rx="10" fill="#ffffff" fill-opacity="0.07"/>
+        <text x="290" y="344">Maths</text>
+        <rect x="364" y="320" width="98" height="36" rx="10" fill="#ffffff" fill-opacity="0.07"/>
+        <text x="384" y="344">Reports</text>
+        <rect x="472" y="320" width="76" height="36" rx="10" fill="#ffffff" fill-opacity="0.07"/>
+        <text x="492" y="344">Excel</text>
+        <rect x="558" y="320" width="110" height="36" rx="10" fill="#ffffff" fill-opacity="0.07"/>
+        <text x="578" y="344">Diagrams</text>
+      </g>
+    </g>
+
+    <!-- right: mock diff card -->
+    <g transform="translate(790 112) rotate(-2)" font-family="ui-monospace, 'Cascadia Code', Consolas, Menlo, monospace">
+      <rect width="420" height="196" rx="16" fill="#0b1214" stroke="#ffffff" stroke-opacity="0.12"/>
+      <circle cx="24" cy="22" r="6" fill="#ff5f57"/>
+      <circle cx="44" cy="22" r="6" fill="#febc2e"/>
+      <circle cx="64" cy="22" r="6" fill="#28c840"/>
+      <text x="92" y="27" font-size="14" fill="#8a9a96">primes.c — 3 changes, all requested</text>
+      <g font-size="15">
+        <text x="22" y="66" fill="#8a9a96">  int is_prime(int n) {</text>
+        <rect x="12" y="78" width="396" height="24" fill="#1f3326"/>
+        <text x="22" y="95" fill="#9ad7aa">+ #include &lt;pthread.h&gt;</text>
+        <rect x="12" y="106" width="396" height="24" fill="#1f3326"/>
+        <text x="22" y="123" fill="#9ad7aa">+ // create the threads</text>
+        <rect x="12" y="134" width="396" height="24" fill="#1f3326"/>
+        <text x="22" y="151" fill="#9ad7aa">+ pthread_create(&amp;t[i], ...);</text>
+        <text x="22" y="180" fill="#8a9a96">  printf("Primes: %d\n", total);</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

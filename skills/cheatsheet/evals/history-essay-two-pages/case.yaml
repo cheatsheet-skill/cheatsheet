@@ -1,0 +1,11 @@
+schema_version: "1.1"
+name: history-essay-two-pages
+expected_outcome: |
+  A .docx essay in Spanish of about two pages (roughly 650-900 words at 12 pt, 1.5
+  spacing) on the causes of the First World War, built on the student's notes: a title
+  and continuous prose, no section headings or bullet lists, no bold in the text, a
+  specific introduction (no "En la actualidad..." opener), a short conclusion with a
+  personal assessment rather than a summary of everything, concrete facts from the notes.
+  AI_USAGE.md is produced; the docx has no AI mention and no library metadata.
+context:
+  scaffold_script: place-files.sh

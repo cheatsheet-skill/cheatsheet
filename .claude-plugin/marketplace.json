@@ -1,0 +1,15 @@
+{
+  "name": "cheatsheet",
+  "owner": {
+    "name": "CheatSheet"
+  },
+  "plugins": [
+    {
+      "name": "cheatsheet",
+      "source": "./",
+      "description": "Completes university assignments at the student's real course level, with minimal changes, student-like writing and a mandatory AI_USAGE.md AI-use declaration.",
+      "version": "1.2.0",
+      "category": "education"
+    }
+  ]
+}

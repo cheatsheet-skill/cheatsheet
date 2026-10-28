@@ -1,0 +1,11 @@
+schema_version: "1.1"
+name: first-year-level
+expected_outcome: |
+  A notas.py that does exactly the three things asked, at first-year level, imitating
+  the teacher's example: input() with string prompts, a list filled with append in a
+  while or for loop, accumulator and counter variables, plain if, print with commas.
+  No comprehensions, lambdas, built-ins the example doesn't use (sum, max, sorted...),
+  ternaries, try/except, functions or main guard, type hints, f-strings or extra
+  validation. Output matches the example run. AI_USAGE.md produced; summary in Spanish.
+context:
+  scaffold_script: place-files.sh

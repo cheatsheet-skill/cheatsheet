@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: ambiguous-asks-first
+expected_outcome: |
+  Before producing any deliverable, the skill replies in Spanish with a single message
+  of concrete questions about what is missing: the description of the library case seen
+  in class, the list of queries requested, the notation and tool for the model (ER
+  Chen/crow's foot, relational schema, which tool), the SQL dialect/DBMS, the delivery
+  format, and ideally a teacher's example. In the same message it offers the interactive
+  guide. It does not invent the library case or the queries and produces no files yet.

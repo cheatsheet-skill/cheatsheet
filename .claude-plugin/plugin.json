@@ -1,0 +1,7 @@
+{
+  "name": "cheatsheet",
+  "version": "1.2.0",
+  "description": "Completes university assignments at the student's real course level, with minimal changes to starter material, student-like writing and a mandatory AI_USAGE.md AI-use declaration. Optional interactive HTML study guide.",
+  "license": "MIT",
+  "keywords": ["students", "university", "homework", "assignments", "education", "ai-disclosure"]
+}

@@ -1,0 +1,16 @@
+SISTEMAS OPERATIVOS - 2º Grado en Ingeniería Informática
+Práctica 3: Hilos POSIX
+
+Se proporciona el programa primos.c, que cuenta los números primos entre 1 y N
+de forma secuencial.
+
+Tarea:
+1. Modifica primos.c para que el recuento se haga en paralelo usando pthreads.
+   El intervalo [1, N] se repartirá en bloques consecutivos, uno por hilo.
+2. El número de hilos se pasará como segundo argumento del programa:
+       ./primos N num_hilos
+3. El resultado impreso debe ser el mismo que el de la versión secuencial.
+
+Compilación: gcc -o primos primos.c -lpthread
+
+Entrega: el fichero primos.c modificado.
