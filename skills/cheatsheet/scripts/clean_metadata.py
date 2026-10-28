@@ -17,6 +17,7 @@ gave you, keep its original properties (that's part of the minimal-change rule).
 Standard library only. Rewrites the file in place.
 """
 import argparse
+import sys
 import datetime
 import os
 import re
@@ -27,6 +28,9 @@ from xml.sax.saxutils import escape
 
 
 def main():
+    # Windows consoles default to cp1252; don't crash on accents or symbols.
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(errors="replace")
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("file")
     ap.add_argument("--author", default="")

@@ -26,6 +26,9 @@ def ignore(_dir, names):
 
 
 def main():
+    # Windows consoles default to cp1252; don't crash on accents or symbols.
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(errors="replace")
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("src")
     ap.add_argument("dest")
