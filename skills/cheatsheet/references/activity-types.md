@@ -18,7 +18,7 @@ Read only the section that matches the activity. If an activity mixes types (a p
 
 1. Build and run the starter code as given, before changing anything. Record its output for the inputs the statement implies; that's your baseline.
 2. Implement each R as a targeted edit (`minimal-change.md`), using only the toolbox (`student-level.md`).
-3. Run again. Compare with the baseline and the expected behaviour in the statement (exact output format included). For performance tasks (parallelism, optimisation), check correctness first, then measure if the statement asks for measurements.
+3. Run again. Compare with the baseline and the expected behaviour in the statement (exact output format included). For performance tasks (parallelism, optimisation), check correctness first, then measure only if the statement asks for measurements, and only at the scale fixed in Step 4e (`student-level.md` §5): the configurations the statement lists, its input, one round of runs, timed the way the course does.
 4. Keep any test scripts in your scratch space. Deliver only the files the statement asks for.
 5. If the statement asks for a memoria/report about the code, see the written-work section and keep it consistent with the actual code (same function names, same measured numbers).
 6. If the environment can't run the language, say so in the summary and in `AI_USAGE.md` ("no he podido ejecutarlo; pruébalo antes de entregar").
@@ -33,7 +33,7 @@ Don't commit to git unless the student asks. If they do, write a plain, short co
 4. Format: the template if there is one (use the docx skill/tools to edit it); otherwise the format the statement asks for (.docx by default for "un Word"), with simple default styling: title, body text, page numbers if typical. Don't design a fancy layout.
 5. Check length on the real output and run `text_check.py`.
 
-**Lab reports with data.** Use only the student's data. Calculations and plots follow the course's methods. Discussion interprets *their* results, including errors and deviations; don't make the results look cleaner than they are.
+**Lab reports with data.** Use only the student's data. Calculations and plots follow the course's methods, and only the plots and tables the statement or the teacher's model report has. Discussion interprets *their* results, including errors and deviations; don't make the results look cleaner than they are.
 
 ## Maths, physics and other problem sets
 
@@ -67,7 +67,7 @@ Don't commit to git unless the student asks. If they do, write a plain, short co
 
 1. Clarify the medium in Step 2 if it matters (hand drawing vs digital, tool, size, format). You can only produce digital output; if the course needs a hand drawing, say that the result is a reference the student will have to redraw, and mention it in `AI_USAGE.md`.
 2. Produce vector work as SVG (or the requested format) via code, at the requested dimensions, with the colours/fonts/constraints in the brief.
-3. Keep it at the level of the course: a first-year design exercise doesn't need a polished agency-style result.
+3. Keep it at the level of the course: a first-year design exercise doesn't need a polished agency-style result. One proposal, unless the brief asks for alternatives.
 4. Don't reproduce copyrighted characters, logos or artworks; if the brief asks for that, propose an original design that meets the learning goal.
 5. Render and check the output visually.
 

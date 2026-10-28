@@ -7,8 +7,9 @@ How to calibrate what you produce to the course, and how students actually do pr
 2. Code: what student code looks like
 3. Documents: how students write coursework
 4. Maths and problem sets
-5. Length defaults
-6. When the material leaves the level unclear
+5. Method and effort at student scale
+6. Length defaults
+7. When the material leaves the level unclear
 
 ---
 
@@ -75,7 +76,35 @@ Do:
 - Round and present results as the examples do (decimals vs fractions, units, significant figures).
 - If a computer check is useful, do it privately; don't put code in a handwritten-style answer unless the course does so.
 
-## 5. Length defaults
+## 5. Method and effort at student scale
+
+The level profile says *which* tools are allowed; this section says *how much* of the work to do with them. A requirement can be met in a student way or in a researcher's way, and both look "correct" to the model. Pick the student way.
+
+**Where the scale comes from.** In order: what the statement names (inputs, sizes, thread counts, number of runs, number of sources, "una gráfica"), then what the teacher's examples and previous practicals do, then the minimum that answers the requirement. A student does what the statement lists and stops; they don't add cases to make the conclusion stronger.
+
+**Budget it in time.** Think of the time the teacher expects (a two-hour lab session, a week of evenings). A student runs their program by hand a handful of times, not dozens. As a rough rule, if one run or one batch of runs takes more than a couple of minutes, or the work needs a background job, you've left student scale, unless the statement's own input is that heavy.
+
+**Experiments, measurements and benchmarks** (speed-up, performance, timing, simulations, lab-style measurements on code):
+
+- Configurations: exactly the ones the statement lists (e.g. 1, 2, 4, 8 threads). If it lists none, 3–4 values that show the trend.
+- Input: the statement's or the teacher's input/size. If none is given, one size big enough for the effect to show (a run of a few seconds), not a sweep of sizes or a collection of generated files.
+- Repetitions: what the statement asks. Otherwise one run per configuration, or about 3 with a plain average if the course does that. No warm-up runs, interleaving, medians of many runs, standard deviations or confidence intervals unless asked or taught.
+- Breakdown: total time only, unless the statement asks to time parts. No per-stage timings, profiling or hardware counters.
+- Presentation: a small table with the numbers. A chart only if the statement asks for one or the teacher's examples have one, and then a single simple chart.
+- Analysis: a few sentences that read the numbers the way the course explains them ("con 8 hilos no llega a 8 porque..."). If the results are noisy or odd, say so briefly and give the likely reason; don't rerun to make them look nicer.
+- Tooling: time it the way the course does (`time` in the shell, the timer the teacher's code uses). Don't build benchmark harnesses, data generators or scripts that produce the tables, charts or report.
+
+**Written work and research:** the readings the student gave you plus, if the statement asks for more, a few accessible sources (2–5 for a first- or second-year essay). One pass of planning and writing, then the review; not several full rewrites.
+
+**Design, drawings, diagrams:** one proposal that meets the brief, unless the brief asks for alternatives. No mood boards, style explorations, multiple colourways or mockups in context unless asked.
+
+**Spreadsheets and data:** the calculations and charts asked for, on the data given. No dashboards, extra pivot tables or sheets "for analysis".
+
+**Maths and problem sets:** solve each problem once with the class method. A private cross-check is fine if it's quick; don't put alternative methods or generalisations in the answer.
+
+**Your own checks are not part of the work.** Verifying that the code runs, recomputing a number or rendering a file is fine and should be quick. Don't let verification grow into extra experiments, and never let it leak into the deliverable as extra results.
+
+## 6. Length defaults
 
 Use these only when the statement and the teacher's examples give no length. They're intentionally on the short side: concise and complete beats long with filler. Adjust down for early years, up slightly for final-year work.
 
@@ -95,8 +124,8 @@ Use these only when the statement and the teacher's examples give no length. The
 
 If a stated length seems short for the content, prioritise: answer every requirement briefly rather than some at length. If it's a maximum, stay under it.
 
-## 6. When the material leaves the level unclear
+## 7. When the material leaves the level unclear
 
 - Ask in Step 2 if the choice would change the work substantially (e.g. "¿podéis usar la STL o lo hacéis con arrays?").
 - If not worth asking, pick the more basic option and say so in the summary.
-- Never "upgrade" the level because the result would look more impressive.
+- Never "upgrade" the level, or the scale of the method, because the result would look more impressive.

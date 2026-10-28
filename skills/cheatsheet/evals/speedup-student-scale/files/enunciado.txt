@@ -1,0 +1,18 @@
+SISTEMAS OPERATIVOS - 2º Grado en Ingeniería Informática
+Práctica 4: Hilos POSIX y speed-up
+
+Se proporciona el programa primos.c, que cuenta los números primos entre 1 y N
+de forma secuencial.
+
+Tarea:
+1. Modifica primos.c para que el recuento se haga en paralelo usando pthreads.
+   El intervalo [1, N] se repartirá en bloques consecutivos, uno por hilo.
+   El número de hilos se pasará como segundo argumento: ./primos N num_hilos
+2. Mide el tiempo de ejecución con N = 2000000 para 1, 2, 4 y 8 hilos
+   (podéis usar el comando time) y calcula el speed-up respecto a 1 hilo.
+3. Escribe una memoria breve (1-2 páginas) con una tabla de tiempos y
+   speed-up y un comentario de los resultados.
+
+Compilación: gcc -o primos primos.c -lpthread
+
+Entrega: primos.c modificado y la memoria en Word (memoria.docx).
