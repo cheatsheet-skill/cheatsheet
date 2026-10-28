@@ -10,7 +10,7 @@
 
 ![Python](https://img.shields.io/badge/scripts-Python%203%20stdlib%20only-3776AB?logo=python&logoColor=white)
 ![Languages](https://img.shields.io/badge/works%20in-ES%20%C2%B7%20CA%20%C2%B7%20EN%20%C2%B7%20any-555)
-![Evals](https://img.shields.io/badge/evals-5%20cases%20%C2%B7%2027%20graders-success)
+![Evals](https://img.shields.io/badge/evals-5%20cases%20%C2%B7%2029%20graders-success)
 [![Stars](https://img.shields.io/github/stars/cheatsheet-skill/cheatsheet?style=social)](https://github.com/cheatsheet-skill/cheatsheet/stargazers)
 
 **[🇪🇸 Spanish version](README.es.md)**
@@ -22,7 +22,7 @@
 > **Drop in your assignment. Get back work that looks like *you* did it on a good day — not like a chatbot did it.**
 > Same starter code, same teacher style, same course level, exactly what was asked. And an honest `AI_USAGE.md` declaring the AI use, every single time.
 
-Ask a generic AI to "do my practical" and you get the same six problems every time:
+Ask a generic AI to "do my practical" and you get the same seven problems every time:
 
 | 😬 What AI usually does | ✅ What CheatSheet does |
 |---|---|
@@ -30,6 +30,7 @@ Ask a generic AI to "do my practical" and you get the same six problems every ti
 | Adds tests, validation, README, "bonus" sections | **Closed requirements list.** Every change traces to a line in the statement. |
 | Turns "measure the speed-up" into a 40-file benchmark campaign | **Student-scale method.** The inputs, runs and sources the statement names, done once, the way a student would. |
 | Uses ternaries, lambdas, libraries you haven't seen | **Level calibration.** Only constructs from *your* course notes and examples. |
+| Explains and defends every decision, as if the teacher were a sceptical reviewer | **Answers, doesn't defend.** The report explains what the statement asks; the explanations for *you* go in the chat and the guide. |
 | Writes 3 pages when you were asked for 1 | **Length budget.** Counted, not estimated. |
 | "It is important to note that… plays a pivotal role…" | **Real writing rules** (English, Spanish, Catalan) based on published research on AI-style text. |
 | Hides that AI was used | **`AI_USAGE.md` always.** A clear declaration you submit following your course's policy. |
@@ -119,7 +120,7 @@ The [`evals/`](skills/cheatsheet/evals) folder contains real-world cases with gr
 - **`first-year-level`** — a first-year Python practical; no constructs above the course level.
 - **`history-essay-two-pages`** — a 2-page essay from class notes; prose, no AI tells, right length.
 - **`ambiguous-asks-first`** — vague request; must ask the right questions in one message.
-- **`speedup-student-scale`** — parallelise and measure the speed-up; only the configurations asked, one round of runs, no benchmark tooling.
+- **`speedup-student-scale`** — parallelise and measure the speed-up; only the configurations asked, one round of runs, no benchmark tooling, a short memoria that doesn't over-justify.
 
 ## 🤝 Honest by design
 

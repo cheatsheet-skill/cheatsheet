@@ -10,7 +10,7 @@
 
 ![Python](https://img.shields.io/badge/scripts-solo%20Python%203%20est%C3%A1ndar-3776AB?logo=python&logoColor=white)
 ![Idiomas](https://img.shields.io/badge/funciona%20en-ES%20%C2%B7%20CA%20%C2%B7%20EN%20%C2%B7%20cualquiera-555)
-![Evals](https://img.shields.io/badge/evals-5%20casos%20%C2%B7%2027%20graders-success)
+![Evals](https://img.shields.io/badge/evals-5%20casos%20%C2%B7%2029%20graders-success)
 [![Stars](https://img.shields.io/github/stars/cheatsheet-skill/cheatsheet?style=social)](https://github.com/cheatsheet-skill/cheatsheet/stargazers)
 
 **[🇬🇧 Read in English](README.md)**
@@ -22,7 +22,7 @@
 > **Le pasas la práctica y te devuelve un trabajo que parece hecho por ti en un buen día, no por un chatbot.**
 > El mismo código de partida, el estilo del profe, el nivel de tu curso y exactamente lo que se pide. Y un `AI_USAGE.md` honesto declarando el uso de IA, siempre.
 
-Si le pides a una IA cualquiera "hazme la práctica", salen siempre los mismos seis problemas:
+Si le pides a una IA cualquiera "hazme la práctica", salen siempre los mismos siete problemas:
 
 | 😬 Lo que suele hacer la IA | ✅ Lo que hace CheatSheet |
 |---|---|
@@ -30,6 +30,7 @@ Si le pides a una IA cualquiera "hazme la práctica", salen siempre los mismos s
 | Añade tests, validaciones, README, apartados "extra" | **Lista cerrada de requisitos.** Cada cambio sale de una frase del enunciado. |
 | Convierte "mide el speed-up" en una campaña de benchmarks con 40 ficheros | **Método a escala de estudiante.** Las entradas, ejecuciones y fuentes que dice el enunciado, una sola vez, como lo haría un alumno. |
 | Usa ternarios, lambdas y librerías que no habéis visto | **Nivel del curso.** Solo lo que aparece en tus apuntes y en los ejemplos de clase. |
+| Explica y justifica cada decisión, como si el profe fuera un revisor desconfiado | **Responde, no se defiende.** El informe explica lo que pide el enunciado; las explicaciones para *ti* van en el chat y en la guía. |
 | Escribe 3 páginas cuando pedían 1 | **Presupuesto de longitud.** Contado, no a ojo. |
 | "Cabe destacar que… desempeña un papel fundamental…" | **Reglas de escritura reales** (ES / CA / EN) basadas en investigación publicada sobre texto de IA. |
 | Esconde que se ha usado IA | **`AI_USAGE.md` siempre.** Una declaración clara para entregar según la política de tu asignatura. |
@@ -119,7 +120,7 @@ La carpeta [`evals/`](skills/cheatsheet/evals) tiene casos reales con sus correc
 - **`first-year-level`**: práctica de Python de primero; nada por encima del nivel del curso.
 - **`history-essay-two-pages`**: ensayo de 2 páginas a partir de apuntes; prosa, sin marcas de IA, longitud correcta.
 - **`ambiguous-asks-first`**: petición vaga; tiene que hacer las preguntas correctas en un solo mensaje.
-- **`speedup-student-scale`**: paralelizar y medir el speed-up; solo las configuraciones pedidas, una tanda de ejecuciones, sin herramientas de benchmark.
+- **`speedup-student-scale`**: paralelizar y medir el speed-up; solo las configuraciones pedidas, una tanda de ejecuciones, sin herramientas de benchmark y una memoria breve que no sobrejustifica.
 
 ## 🤝 Honesta por diseño
 

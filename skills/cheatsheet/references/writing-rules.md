@@ -85,7 +85,14 @@ Also:
 
 This is the deepest layer, and the one that "humanising" tricks don't fix.
 
-- **Be specific.** Use the concrete facts, dates, names, figures, terms and examples from the course material and sources the student gave you. Generic statements that would fit any topic are the strongest AI signal and the weakest writing.
+- **Be specific.** Use the concrete facts, dates, names, figures, terms and examples from the course material and sources the student gave you. Generic statements that would fit any topic are the strongest AI signal and the weakest writing. Specific is not exhaustive: one concrete detail per point is enough. Model numbers, exact timings for every case, every intermediate measurement and every edge case read like a lab notebook, not a student report.
+- **Answer, don't defend.** Write for the teacher, who knows the subject and asked specific questions. Explain what the statement asks you to explain and stop. Real students state what they did ("Para pasar los datos entre etapas usamos LinkedBlockingQueue") and rarely argue why it's correct, why it isn't an error, or why every alternative is worse. Signs you're defending instead of answering:
+  - proving that requirements are met ("cumple todo lo que pide el enunciado: …", "no hay ningún synchronized ni lock");
+  - justifying results nobody questioned ("no es un error: …", "hay una incoherencia aparente…", "hay que ser honestos con…");
+  - stacking several causes and caveats on one result (the CPU, the turbo, the JIT, the garbage collector…), where a student gives the main one;
+  - re-explaining theory from class (what a blocking queue is, what a race condition is);
+  - walking through the order of operations to show there's no race, unless the statement asks for it.
+  Where the statement asks to "justify" or "explain why", give the reason in a sentence or two, in the course's words.
 - **Take a position** where the task asks for analysis or opinion. Don't automatically balance "on one hand… on the other" when the question has a reasonable answer.
 - **Tone isn't uniformly positive.** Name problems, failures, uncertainty, the dark side of a historical event. AI text softens and drifts toward optimism.
 - **First person** if the course genre allows it (many essays and reflective tasks do; formal lab reports often use impersonal forms — follow the teacher's examples).
@@ -112,6 +119,7 @@ Never introduce spelling errors, wrong facts or broken grammar on purpose.
 **Code comments** (see also `student-level.md`):
 - Match the starter code: same language (often the student's language, not English), same comment symbol style, same density. If the starter has few comments, add few.
 - Short and literal: `# creamos los hilos`, `// suma parcial de cada hilo`. Not `# Step 1: Initialize the thread pool for optimal concurrency`.
+- One line saying *what* the code does, as the teacher's comments do. No multi-line comments arguing *why* it's correct ("se incrementa antes para que no vean el contador a 0…", "un Runnable no puede devolver nada, así que…", "así que nunca los tocan los dos a la vez"). If the reasoning matters for the student, it goes in the chat summary or `AI_USAGE.md`.
 - No docstrings, headers or banners unless the teacher's code has them.
 - Don't comment code you didn't write or change.
 - Never comment about the AI, about "improvements", or about what you removed.
@@ -133,8 +141,9 @@ Run `scripts/text_check.py` first, then go through this by reading the text your
 - [ ] No bold in running text, no bold-label bullets, no unnecessary headings, sentence-case headings in ES/CA, no emojis, no em-dash asides.
 - [ ] Paragraph and sentence lengths vary; some discourse/epistemic markers present.
 - [ ] Every paragraph contains something specific from the material (a fact, term, name, figure, example). Delete paragraphs that could fit any topic.
+- [ ] Every paragraph answers something the statement asks to explain. No proving that requirements are met, no defending numbers nobody questioned, no theory from class, no pile of caveats on one result.
 - [ ] Position taken where the task asks for one; tone not uniformly positive.
 - [ ] Register matches the course year; technical terms are ones the course uses.
 - [ ] No invented names, quotes, data, sources or experiences.
-- [ ] Code comments match the starter's language, style and density.
+- [ ] Code comments match the starter's language, style and density: one line saying what, no multi-line justifications.
 - [ ] No mention of AI anywhere in the deliverable.

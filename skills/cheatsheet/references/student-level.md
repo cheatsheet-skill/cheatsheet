@@ -66,7 +66,9 @@ Do:
 - **Structure comes from the statement or the teacher.** If the statement lists points (1. Contexto, 2. Causas…), use those as the structure. If the teacher gave a template or a model memoria, follow its sections exactly. Otherwise, use the simplest structure that suits the genre: essays are continuous prose with a title; lab reports usually have objective, procedure/method, results, discussion/conclusions; short answers are numbered answers.
 - **Depth is the course's depth.** Use the concepts, authors and data from the notes. A first-year history essay explains causes and consequences with a few concrete facts and a personal assessment; it doesn't do historiography.
 - **Sources.** Students cite the course readings and a few accessible sources. Don't add a long bibliography. Never invent references; if the task needs sources you can't verify, ask for the readings or mark a placeholder.
-- **Figures and tables** only where the statement or genre expects them (results tables in lab reports; a diagram if asked). Number and caption them the way the teacher does.
+- **Figures and tables** only where the statement or genre expects them (results tables in lab reports; a diagram if asked). Number and caption them the way the teacher does. When the statement asks for results "preferiblemente de forma gráfica", that's one or two simple charts, not a chart plus a table plus a breakdown for every question. Context the statement asks for (hardware, test data) is a sentence or a short list, not a spec sheet: "portátil con un i7 de 10 núcleos (12 hilos) y 16 GB" covers "indicar el hardware, especialmente el número de núcleos".
+- **Reports that accompany code** (memorias de prácticas): the sections the statement or rubric names (e.g. design, problems found, results and analysis), each short. Design is a couple of paragraphs on how the parts fit, in the course's terms; no architecture diagrams unless asked. Problems are the two or three real ones met while doing what was asked, with how they were solved in a sentence or two. Analysis reads the main trend in the numbers and gives the main reason.
+- **Polish.** Charts and diagrams look like what a student makes with the course's usual tools (a spreadsheet chart, a quick plot), not publication figures. Don't spend time on styling.
 - **Front matter.** Use the template's cover/header if there is one. Fill student-specific fields (name, group) only with what they gave you; otherwise leave the template's placeholders and mention it.
 
 ## 4. Maths and problem sets
@@ -98,6 +100,8 @@ The level profile says *which* tools are allowed; this section says *how much* o
 
 **Design, drawings, diagrams:** one proposal that meets the brief, unless the brief asks for alternatives. No mood boards, style explorations, multiple colourways or mockups in context unless asked.
 
+**Performance and optimisation goals** ("la versión concurrente debe ser más rápida", "optimiza el programa"): reach the goal with the straightforward design the statement describes, check it once, and stop. No profiling to find where the time goes, no per-thread or per-stage timing, no load-balancing or tuning passes after it already meets the goal, unless the statement asks for them. Ideas from the teacher's notes are used as the notes describe them, at the simplest level that works.
+
 **Spreadsheets and data:** the calculations and charts asked for, on the data given. No dashboards, extra pivot tables or sheets "for analysis".
 
 **Maths and problem sets:** solve each problem once with the class method. A private cross-check is fine if it's quick; don't put alternative methods or generalisations in the answer.
@@ -115,14 +119,17 @@ Use these only when the statement and the teacher's examples give no length. The
 | Reflection / opinion piece | 300–600 words |
 | Essay (1st–2nd year) | 2–4 pages (≈ 800–1,600 words) |
 | Essay (3rd–4th year) | 4–8 pages |
-| Lab report / memoria de prácticas | 3–8 pages including figures; results and discussion are most of it |
-| Code practical memoria (when asked) | 2–5 pages: what was done, design decisions, results, problems found |
+| Lab report / memoria de prácticas | 3–6 pages including figures; results and discussion are most of it |
+| Code practical memoria (when asked) | 2–4 pages including tables and figures: what was done, design, problems found, results |
+| "Pequeño informe" / "breve memoria" / short report | 2–3 pages including tables and figures, never more than 3; at most 2–3 tables and 2 figures |
 | Presentation | 1 slide per minute of talk, ~8–12 slides for 10 min; few words per slide |
 | Code comments | roughly matching the starter's density; otherwise a comment per non-obvious block |
 
 **Pages ↔ words.** With no format given, assume A4, 12 pt, 1.5 line spacing (common in Spanish/Catalan universities): ~350–400 words per page of plain prose; ~500 with single spacing; ~250 double-spaced. If you produce a .docx, convert it to PDF (`soffice --headless --convert-to pdf`) and count real pages.
 
 If a stated length seems short for the content, prioritise: answer every requirement briefly rather than some at length. If it's a maximum, stay under it.
+
+**Weight in the grade.** When the rubric gives the document a small share of the mark (e.g. the report is 1 point out of 10), size it to that share: the minimum of the range, every requested point covered in a paragraph.
 
 ## 7. When the material leaves the level unclear
 

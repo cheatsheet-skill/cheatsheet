@@ -7,7 +7,9 @@ expected_outcome: |
   plain average. No sweeps of input sizes, generated input files, repeated or interleaved
   benchmark batches, per-stage timings, statistics, benchmark harness scripts or
   background jobs lasting minutes. memoria.docx is 1-2 pages with one table of times and
-  speed-up and a short comment; no charts (not asked). AI_USAGE.md exists; no AI
+  speed-up and a short comment; no charts (not asked). It answers what the statement asks
+  without defending the results or re-explaining theory, and new comments in primos.c are
+  short one-liners like the original's. AI_USAGE.md exists; no AI
   mention in primos.c or memoria.docx.
 context:
   scaffold_script: place-files.sh

@@ -29,10 +29,11 @@ AI models reliably go wrong in these ways when doing coursework. Knowing *why* h
 4. **Working above the course level.** Models are trained mostly on professional code and prose, so their default is expert idiom: ternaries and comprehensions where the course uses `if/else` and loops, libraries not yet taught, technical vocabulary the class hasn't seen. → Level calibration (`references/student-level.md`).
 5. **Excessive length.** Reward models and human raters both tend to prefer longer answers, so models pad. → Length budget (Step 4c).
 6. **"AI style" in text.** Overused vocabulary, formulaic structure, bold-and-bullets formatting, tidy summarising conclusions and a flat, positive, impersonal voice. Studies show frequent LLM users spot these patterns very accurately, and they also simply make writing worse. → Writing rules (`references/writing-rules.md`), applied to every piece of text, including code comments.
+7. **Over-explaining and defending.** Models are tuned to explain and to pre-empt objections, and with a rubric in view they write defensively: every decision argued, every anomaly justified, every rubric penalty answered in advance ("no hay ningún synchronized", "no es un error: …", "hay que ser honestos con…"), theory from class re-explained, and comments that argue why the code is correct. This skill's own learning goal makes it worse, because explanation meant for the student leaks into the work. But the deliverable is read by a teacher who knows the subject and asked specific questions: a student answers those, briefly, and doesn't defend what nobody questioned. Explanation for the student goes in the chat summary and the guide. → Teacher-facing writing (Step 5, `references/writing-rules.md` §7).
 
 And one that sits under all of them: **guessing what the teacher wants.** When the material doesn't say, don't invent it — ask (Step 2).
 
-**The test for every decision:** *would a competent student on this course, doing this activity in the time the teacher expects (a lab session, a few evenings), do this?* If a step only makes the result more rigorous, general, polished or certain than the statement asks, a student wouldn't do it, so don't.
+**The test for every decision:** *would a competent student on this course, doing this activity in the time the teacher expects (a lab session, a few evenings), do this?* If a step only makes the result more rigorous, general, polished, optimised, certain or better defended than the statement asks, a student wouldn't do it, so don't. "Good enough to get the marks, in a reasonable time" is the student's standard, not "as good as possible".
 
 ## Workflow
 
@@ -92,7 +93,7 @@ Allowed additions are only those strictly **necessary** for an R to work (e.g. a
 
 Then write a **"not requested" list** of the tempting extras you can already see (input validation, error handling, tests, extra sections, refactors, nicer output, a README, comments on untouched code). This list is what you check against at the end. Useful extras go to the chat summary as suggestions, never into the work.
 
-If there's a rubric, map each criterion to the Rs. A rubric clarifies what quality looks like for the requested items; it doesn't license new items.
+If there's a rubric, map each criterion to the Rs. A rubric clarifies what quality looks like for the requested items; it doesn't license new items. Read it the way a student does: as a list of things that must be **present** so you don't lose marks, not as targets to maximise. A penalty line like "análisis poco riguroso (-0.25)", "no se explica el diseño (-0.25)" or "no se describen los problemas (-0.25)" is avoided by a clear paragraph that does it, not by a section that makes the point unarguable. Spend effort in proportion to weight: if the report is worth 1 point out of 10, it gets about a tenth of the effort, and the code gets the rest.
 
 **4b. Level profile.** Fill in, from the material (see `references/student-level.md`):
 - course and year; what this topic builds on;
@@ -101,7 +102,7 @@ If there's a rubric, map each criterion to the Rs. A rubric clarifies what quali
 
 Anything outside the toolbox needs a reason ("the statement requires it"). When in doubt, pick the simplest, most direct solution that satisfies the statement, the way a competent but non-expert student would.
 
-**4c. Length budget.** If the statement gives pages, words, slides or time, that's the target (stay within about ±10%, never over a stated maximum). If not, use the defaults in `references/student-level.md` for the task type and level. Write the number down; you'll check it.
+**4c. Length budget.** If the statement gives pages, words, slides or time, that's the target (stay within about ±10%, never over a stated maximum). Words like "pequeño", "breve", "corto", "short", "brief", "petit" are a length instruction too: take the bottom of the default range and treat its top as a hard maximum. If there's no indication, use the defaults in `references/student-level.md` for the task type and level. Write the number down (pages *and* the number of tables and figures); you'll check it.
 
 **4d. Output plan.** Which files you'll produce or modify, in which format, and where they go (the project folder if the work was on existing files; otherwise wherever this environment delivers files).
 
@@ -122,8 +123,10 @@ Principles while working:
 
 - **Touch only what an R needs.** Keep names, structure, order, formatting, comments, whitespace style and file layout of the starting material exactly as they are, even where you'd do it differently. New code or text imitates the existing style. Full protocol: `references/minimal-change.md`.
 - **Stay inside the toolbox** from 4b.
-- **Work at the scale in 4e, and stop when an R is met.** One round of work per R, the way a student does it. Redo something only if it's wrong (a bug, a result that contradicts the statement), never to make it cleaner, more precise or more convincing. If you notice yourself planning a "second batch", a "final run", a bigger input "to be sure", a run that takes more than a couple of minutes, a background job, or a script whose job is to produce the analysis or the report, stop: that's failure mode 3. Go back to 4e and do the student version.
+- **Work at the scale in 4e, and stop when an R is met.** One round of work per R, the way a student does it. Redo something only if it's wrong (a bug, a result that contradicts the statement), never to make it cleaner, more precise, faster or more convincing. Once the statement's goal is met (it works, it's faster than the sequential version, it has the required parts), stop: measuring where the time goes and tuning it further is not a fix. If you notice yourself planning a "second batch", a "final run", a bigger input "to be sure", timing each stage or each thread, an optimisation pass, a run that takes more than a couple of minutes, a background job, or a script whose job is to produce the analysis or the report, stop: that's failure mode 3. Go back to 4e and do the student version.
 - **Write every piece of text** (documents, answers, comments, captions, slide text, commit messages if asked) following `references/writing-rules.md`. Read it before you write the first sentence, not after.
+- **The deliverable is written for the teacher, who knows the subject.** Answer what the statement asks to explain, and only that. Say what was done and what came out; give a reason only where the statement asks for one or the choice isn't the obvious one. Don't re-explain theory from class, don't argue that requirements are met, don't justify every number. Everything you'd like the *student* to understand goes in the chat summary, `AI_USAGE.md` ("qué debería entender") or the guide, never in the work.
+- **Report only the work in scope.** A section on "problems encountered" or "design decisions" describes the real difficulties of doing the Rs, two or three of them, briefly. It doesn't narrate your own process (profiling, tuning, instrumented copies, extra experiments), because a student wouldn't have done that.
 - **Respect the length budget** as you go; it's easier than cutting later.
 - **No AI mentions in deliverables.** Not in comments, footers, headers, document properties or file names. Files you create from scratch with python-docx/openpyxl/python-pptx carry library junk in their properties ("generated by python-docx", 2013 dates): run `scripts/clean_metadata.py FILE [--author "name the student gave"]` on them. Templates the student gave you keep their own properties.
 - Keep scratch work (test scripts, experiments, logs) out of the deliverable folder.
@@ -141,7 +144,8 @@ Go through each check and fix what fails. Don't skip checks because the work "lo
    ```
    and read every hunk. For each one ask: *which R or N requires this exact change?* If none, revert it. Typical culprits: renamed variables, reordered imports, reformatted lines, rewritten comments, changed quotes or spacing, "fixed" typos in the teacher's text, altered styles in a template.
 5. **Right level?** Scan for constructs, libraries, terms and notation outside the toolbox. Replace them with the simpler taught equivalent.
-6. **Right length?** Count words/pages/slides (for .docx, convert to PDF to count real pages if LibreOffice is available). Trim padding before trimming content.
+6. **Right length?** Count words/pages/slides, tables and figures (for .docx, convert to PDF to count real pages if LibreOffice is available). Trim padding before trimming content.
+   **Not over-explained?** Go paragraph by paragraph (and through the comments of new code) and ask: *which part of the statement asked for this explanation?* Cut paragraphs that answer nobody's question, theory the teacher taught, arguments that a requirement is met, pre-emptive defences of numbers ("no es un error…"), and caveats piled on a result. One reason per decision at most, and none where the choice is obvious.
 7. **Text sounds like a real student?** Run
    ```bash
    python scripts/text_check.py <file> --lang <es|en|ca|...>
