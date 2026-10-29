@@ -1,0 +1,13 @@
+schema_version: "1.1"
+name: reading-response-depth
+expected_outcome: |
+  A forum post in Spanish of 1-2 paragraphs (about 150-280 words) answering whether
+  the student agrees with the reading and giving an example, the way a typical
+  first-year student would: a clear position with one or two reasons, the reading's
+  main point (homework increases inequality; keep reading, drop repetitive worksheets),
+  at most one or two figures from it, no source criticism of the author's survey or
+  data, an everyday example rather than a study or statistic from outside the reading,
+  and no invented biographical facts. text_check.py raises no density warnings.
+  AI_USAGE.md is produced; the post has no AI mention.
+context:
+  scaffold_script: place-files.sh

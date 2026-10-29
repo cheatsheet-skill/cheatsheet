@@ -85,7 +85,7 @@ Also:
 
 This is the deepest layer, and the one that "humanising" tricks don't fix.
 
-- **Be specific.** Use the concrete facts, dates, names, figures, terms and examples from the course material and sources the student gave you. Generic statements that would fit any topic are the strongest AI signal and the weakest writing. Specific is not exhaustive: one concrete detail per point is enough. Model numbers, exact timings for every case, every intermediate measurement and every edge case read like a lab notebook, not a student report.
+- **Be specific.** Use the concrete facts, dates, names, figures, terms and examples from the course material and sources the student gave you. Generic statements that would fit any topic are the strongest AI signal and the weakest writing. Specific is not dense, and not exhaustive: one concrete detail per point is enough, taken from the main points of the reading, not its minor names, figures and dates. A paragraph packed with names, numbers and quotes is as much an AI signal as a generic one, and it reads above the class (`student-level.md` §4 has the density budget). Model numbers, exact timings for every case, every intermediate measurement and every edge case read like a lab notebook, not a student report.
 - **Answer, don't defend.** Write for the teacher, who knows the subject and asked specific questions. Explain what the statement asks you to explain and stop. Real students state what they did ("Para pasar los datos entre etapas usamos LinkedBlockingQueue") and rarely argue why it's correct, why it isn't an error, or why every alternative is worse. Signs you're defending instead of answering:
   - proving that requirements are met ("cumple todo lo que pide el enunciado: …", "no hay ningún synchronized ni lock");
   - justifying results nobody questioned ("no es un error: …", "hay una incoherencia aparente…", "hay que ser honestos con…");
@@ -96,7 +96,7 @@ This is the deepest layer, and the one that "humanising" tricks don't fix.
 - **Take a position** where the task asks for analysis or opinion. Don't automatically balance "on one hand… on the other" when the question has a reasonable answer.
 - **Tone isn't uniformly positive.** Name problems, failures, uncertainty, the dark side of a historical event. AI text softens and drifts toward optimism.
 - **First person** if the course genre allows it (many essays and reflective tasks do; formal lab reports often use impersonal forms — follow the teacher's examples).
-- **Register of the level.** A first-year student doesn't write like a journal article. Prefer common vocabulary, technical terms only where the course uses them, and explanations that show understanding rather than polish.
+- **Register of the level.** A first-year student doesn't write like a journal article, and doesn't think like one either: one or two reasons per answer, not an evaluation of every argument (`student-level.md` §4). Prefer common vocabulary, technical terms only where the course uses them, and explanations that show understanding rather than polish.
 - **Names.** Don't invent people, quotes or studies. If an example needs a name and none exists in the material, avoid the name. (Invented "Dr. Sarah Thompson / Emily Carter"-style names were one of the most reliable tells in the Russell study.)
 - **Citations.** Only cite sources you actually have or can verify. Use the citation style the teacher uses.
 
@@ -140,7 +140,9 @@ Run `scripts/text_check.py` first, then go through this by reading the text your
 - [ ] No template sections the statement didn't ask for; structure follows the statement.
 - [ ] No bold in running text, no bold-label bullets, no unnecessary headings, sentence-case headings in ES/CA, no emojis, no em-dash asides.
 - [ ] Paragraph and sentence lengths vary; some discourse/epistemic markers present.
-- [ ] Every paragraph contains something specific from the material (a fact, term, name, figure, example). Delete paragraphs that could fit any topic.
+- [ ] Every paragraph is about something specific from the material (a fact, term, name or example). Delete paragraphs that could fit any topic.
+- [ ] Not denser than the class: names, figures and quotes within the budget in `student-level.md` §4 (text_check reports them); only the reading's main points; no source criticism or counter-arguments the statement didn't ask for; examples a typical student would think of.
+- [ ] Personal reactions only; no invented experiences (jobs, relatives, "I always thought…").
 - [ ] Every paragraph answers something the statement asks to explain. No proving that requirements are met, no defending numbers nobody questioned, no theory from class, no pile of caveats on one result.
 - [ ] Position taken where the task asks for one; tone not uniformly positive.
 - [ ] Register matches the course year; technical terms are ones the course uses.

@@ -362,6 +362,26 @@ def main():
         c2 = cv(pl)
         if c2 is not None and len(pl) >= 4 and c2 < 0.25:
             hit("!", f"paragraph lengths very uniform (variation {c2:.2f}) — let length follow content")
+        # 5b. density of specifics (names, figures, quotes): above the class when packed
+        if words >= 80:
+            names = set()
+            for s in sentences(text):
+                for w in re.findall(r"[\wÀ-ÿ’']+", s)[1:]:
+                    if w[0].isupper() and len(w) > 2 and not w.isupper():
+                        names.add(w.rstrip("’'s").rstrip("’'"))
+            per100 = 100 * len(names) / words
+            figures = len(re.findall(r"(?<![\w.,])\d[\d.,]*%?", text))
+            # quoted titles of works ("Death of a Loyalist Soldier") are not quotes
+            quotes = sum(1 for q in re.findall(r"[\"“«]([^\"”»]{12,}?)[\"”»]", text) if not title_case(q))
+            hit("i", f"density: {len(names)} distinct names ({per100:.1f}/100 words), {figures} figure(s), {quotes} quote(s)")
+            # thresholds ≈ 90th percentile of real pre-AI intro-course posts (history, art history, teacher education)
+            if per100 > 7:
+                hit("!", f"{per100:.1f} distinct names per 100 words — denser than a typical student; keep the reading's main "
+                         "points and cut minor names (student-level.md §4)")
+            if figures > max(3, words / 100):
+                hit("!", f"{figures} figures/dates — more than a typical student uses; keep the ones the point needs")
+            if quotes > max(2, words / 200):
+                hit("!", f"{quotes} direct quotes — a typical student quotes once or twice in a short answer")
         # 6. length
         pages = words / a.wpp
         hit("i", f"length: {words} words ≈ {pages:.1f} pages at {a.wpp} words/page")
