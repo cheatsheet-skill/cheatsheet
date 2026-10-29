@@ -1,0 +1,18 @@
+ESTRUCTURA DE DATOS - LABORATORIO V
+IMPLEMENTAR TABLA DE HASH CON DISPERSIÓN ABIERTA
+
+En esta práctica os proporcionamos un esqueleto de una implementación de tabla hash
+que debéis completar con dispersión abierta.
+
+Tarea 1. Analizar el código facilitado. La clase MeuMap.java es una interfaz con los
+métodos que MevaHashMap.java tiene que implementar.
+Tarea 2. Completar en MevaHashMap.java: la declaración del atributo taula, teClau(K key),
+teValor(V value), get(K key) y put(K key, V value). El rehash ya está implementado en el
+esqueleto.
+Tarea 3. Explicar el algoritmo de cada función de la tarea 2 (entre 100 y 200 palabras por
+función), en el código.
+Tarea 4. Comprobar la tabla con un diccionario: el usuario escribe palabras y el programa
+responde "la palabra no se encuentra en el diccionario" o "la palabra <palabra> significa
+<definición>".
+
+Entrega: proyecto IntelliJ IDEA en ZIP.

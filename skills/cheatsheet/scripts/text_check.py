@@ -44,7 +44,7 @@ VOCAB = {
         r"adentr\w+", r"profundiz\w+ en", r"sumerg\w+ en", r"entramado", r"tapiz", r"crisol", r"testimonio d(e|el)",
         r"subray\w+", r"resalt\w+", r"pone(n)? de manifiesto", r"fundamental(es)?", r"crucial(es)?",
         r"vital(es)?", r"primordial(es)?", r"vibrantes?", r"intrincad\w+", r"multifac[eé]tic\w+",
-        r"exhaustiv\w+", r"robust\w+", r"panorama", r"naveg\w+", r"foment\w+", r"potenci\w+", r"impuls\w+",
+        r"exhaustiv\w+", r"robust\w+", r"panorama", r"naveg(?!ador)\w+", r"foment\w+", r"potenci\w+", r"impuls\w+",
         r"abord\w+", r"desempeñ\w+ un papel", r"jug\w+ un papel", r"se erige(n)? como",
         r"se posiciona(n)? como", r"constituye(n)? un hito", r"marca(n|r)? un antes y un despu[eé]s",
         r"es (importante|fundamental|crucial) (destacar|señalar|mencionar|resaltar)", r"cabe (destacar|señalar|mencionar)",
@@ -55,7 +55,7 @@ VOCAB = {
     "ca": [
         r"endins\w+", r"aprofund\w+ en", r"teixit", r"testimoni d(e|el)", r"subratll\w+", r"ressalt\w+",
         r"fonamentals?", r"crucials?", r"vitals?", r"vibrants?", r"intricat\w*", r"polifac[eè]tic\w*",
-        r"exhaustiu\w*", r"robust\w*", r"panorama", r"naveg\w+", r"foment\w+", r"potenci\w+", r"impuls\w+",
+        r"exhaustiu\w*", r"robust\w*", r"panorama", r"naveg(?!ador)\w+", r"foment\w+", r"potenci\w+", r"impuls\w+",
         r"abord\w+", r"jug\w+ un paper", r"s'erigeix(en)? com", r"constitueix(en)? una fita",
         r"marca(r|n)? un abans i un despr[eé]s", r"[eé]s (important|fonamental|crucial) (destacar|assenyalar|esmentar)",
         r"cal (destacar|assenyalar|esmentar)", r"val la pena (esmentar|destacar)", r"en el m[oó]n actual",
@@ -255,6 +255,8 @@ def main():
     ap.add_argument("--target-words", type=int, default=None)
     ap.add_argument("--wpp", type=int, default=375, help="words per page for the page estimate (A4, 12pt, 1.5 spacing ≈ 375)")
     ap.add_argument("--allow-ai-mentions", action="store_true", help="use only for AI_USAGE.md")
+    ap.add_argument("--technical", action="store_true",
+                    help="technical document (report on code or experiments, exercise sheet): numbers and code names are content, so the name/figure density budget is reported but not flagged")
     a = ap.parse_args()
 
     ext = os.path.splitext(a.file)[1].lower()
@@ -375,12 +377,14 @@ def main():
             quotes = sum(1 for q in re.findall(r"[\"“«]([^\"”»]{12,}?)[\"”»]", text) if not title_case(q))
             hit("i", f"density: {len(names)} distinct names ({per100:.1f}/100 words), {figures} figure(s), {quotes} quote(s)")
             # thresholds ≈ 90th percentile of real pre-AI intro-course posts (history, art history, teacher education)
-            if per100 > 7:
+            if a.technical:
+                pass
+            elif per100 > 7:
                 hit("!", f"{per100:.1f} distinct names per 100 words — denser than a typical student; keep the reading's main "
                          "points and cut minor names (student-level.md §4)")
-            if figures > max(3, words / 100):
+            if not a.technical and figures > max(3, words / 100):
                 hit("!", f"{figures} figures/dates — more than a typical student uses; keep the ones the point needs")
-            if quotes > max(2, words / 200):
+            if not a.technical and quotes > max(2, words / 200):
                 hit("!", f"{quotes} direct quotes — a typical student quotes once or twice in a short answer")
         # 6. length
         pages = words / a.wpp

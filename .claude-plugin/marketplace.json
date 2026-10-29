@@ -8,7 +8,7 @@
       "name": "cheatsheet",
       "source": "./",
       "description": "Completes university assignments at the student's real course level, with minimal changes, student-like writing and a mandatory AI_USAGE.md AI-use declaration.",
-      "version": "1.5.0",
+      "version": "1.6.0",
       "category": "education"
     }
   ]

@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: guide-asked-not-assumed
+expected_outcome: |
+  The material is complete (statement and the teacher's example), so nothing is missing,
+  but the student hasn't said whether they want the interactive guide. The skill sends
+  one short message in Spanish asking whether they want it (and nothing else that isn't
+  needed) and waits. It does not build the guide or any other file in this run.
+context:
+  scaffold_script: place-files.sh

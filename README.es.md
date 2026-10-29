@@ -32,6 +32,7 @@ Si le pides a una IA cualquiera "hazme la práctica", salen siempre los mismos o
 | Usa ternarios, lambdas y librerías que no habéis visto | **Nivel del curso.** Solo lo que aparece en tus apuntes y en los ejemplos de clase. |
 | Explica y justifica cada decisión, como si el profe fuera un revisor desconfiado | **Responde, no se defiende.** El informe explica lo que pide el enunciado; las explicaciones para *ti* van en el chat y en la guía. |
 | Mete todos los nombres, cifras y citas de la lectura en un argumento de seminario de máster | **Profundidad de un alumno típico.** Las ideas principales de la lectura, una o dos razones por pregunta y un presupuesto de densidad que comprueba un script, calibrado con entregas reales de alumnos anteriores a la IA. |
+| Explica cada resultado de laboratorio con todos los mecanismos que conoce y escribe todas las restricciones enteras | **Profundidad técnica de un alumno típico.** Cada resultado con su causa principal y con las palabras de las diapositivas; las hojas de ejercicios, como las soluciones del profe. Calibrado con prácticas reales de segundo. |
 | Escribe 3 páginas cuando pedían 1 | **Presupuesto de longitud.** Contado, no a ojo. |
 | "Cabe destacar que… desempeña un papel fundamental…" | **Reglas de escritura reales** (ES / CA / EN) basadas en investigación publicada sobre texto de IA. |
 | Esconde que se ha usado IA | **`AI_USAGE.md` siempre.** Una declaración clara para entregar según la política de tu asignatura. |
@@ -81,7 +82,7 @@ Solo el ejercicio 3. El profe quiere que usemos pthreads.
 Fes l'activitat del tema 3, 2 pàgines, amb els meus apunts.
 ```
 
-Si falta algo importante (formato de entrega, versión del lenguaje, tus medidas del laboratorio…), pregunta **una sola vez**, en un solo mensaje, y se pone a trabajar.
+Antes de empezar siempre manda **un** mensaje: te pregunta si quieres la guía interactiva y, si falta algo importante (el esqueleto del profe, los resultados de tu simulador o del laboratorio, los apuntes del tema, el formato de entrega…), te lo pide en ese mismo mensaje. Luego espera tu respuesta. La guía solo se hace si dices que sí.
 
 ## ⚙️ Cómo funciona
 
@@ -122,6 +123,8 @@ La carpeta [`evals/`](skills/cheatsheet/evals) tiene casos reales con sus correc
 - **`history-essay-two-pages`**: ensayo de 2 páginas a partir de apuntes; prosa, sin marcas de IA, longitud correcta.
 - **`ambiguous-asks-first`**: petición vaga; tiene que hacer las preguntas correctas en un solo mensaje.
 - **`reading-response-depth`**: aportación a un foro de primero sobre una lectura; 1-2 párrafos, la idea principal en vez de todas las cifras, sin crítica de fuentes y con un ejemplo cotidiano.
+- **`missing-skeleton-asks`**: el enunciado menciona un esqueleto que el alumno no ha pasado; tiene que pedirlo junto con los apuntes, preguntar por la guía y esperar.
+- **`guide-asked-not-assumed`**: material completo; aun así tiene que preguntar primero por la guía y no hacerla sin que se la pidan.
 - **`speedup-student-scale`**: paralelizar y medir el speed-up; solo las configuraciones pedidas, una tanda de ejecuciones, sin herramientas de benchmark y una memoria breve que no sobrejustifica.
 
 ## 🤝 Honesta por diseño

@@ -32,6 +32,7 @@ Ask a generic AI to "do my practical" and you get the same eight problems every 
 | Uses ternaries, lambdas, libraries you haven't seen | **Level calibration.** Only constructs from *your* course notes and examples. |
 | Explains and defends every decision, as if the teacher were a sceptical reviewer | **Answers, doesn't defend.** The report explains what the statement asks; the explanations for *you* go in the chat and the guide. |
 | Packs every name, figure and quote from the reading into an argument worthy of a seminar | **Depth of a typical student.** The reading's main points, one or two reasons per question, a density budget checked by script and calibrated on real pre-AI student posts. |
+| Explains each lab result with every mechanism it knows, writes every constraint in full | **Technical depth of a typical student.** Each result with its main cause in the words of the slides; exercise sheets answered like the teacher's solutions. Calibrated on real second-year practicals. |
 | Writes 3 pages when you were asked for 1 | **Length budget.** Counted, not estimated. |
 | "It is important to note that… plays a pivotal role…" | **Real writing rules** (English, Spanish, Catalan) based on published research on AI-style text. |
 | Hides that AI was used | **`AI_USAGE.md` always.** A clear declaration you submit following your course's policy. |
@@ -81,7 +82,7 @@ Do exercise 3 only. The teacher wants us to use pthreads.
 Write the unit 3 essay, 2 pages, using my class notes.
 ```
 
-If something important is missing (delivery format, language version, your lab measurements…) it asks **once**, in a single message, then works.
+Before starting it always sends **one** message: it asks whether you want the interactive guide and, if something important is missing (the teacher's skeleton, your simulator or lab results, the topic notes, delivery format…), asks for it in the same message. Then it waits for your answer. The guide is only built if you say yes.
 
 ## ⚙️ How it works
 
@@ -122,6 +123,8 @@ The [`evals/`](skills/cheatsheet/evals) folder contains real-world cases with gr
 - **`history-essay-two-pages`** — a 2-page essay from class notes; prose, no AI tells, right length.
 - **`ambiguous-asks-first`** — vague request; must ask the right questions in one message.
 - **`reading-response-depth`** — a first-year forum post on a reading; 1-2 paragraphs, the main point instead of every figure, no source criticism, an everyday example.
+- **`missing-skeleton-asks`** — the statement mentions a skeleton the student didn't attach; must ask for it and the topic notes, ask about the guide, and wait.
+- **`guide-asked-not-assumed`** — complete material; must still ask about the guide first and not build it unasked.
 - **`speedup-student-scale`** — parallelise and measure the speed-up; only the configurations asked, one round of runs, no benchmark tooling, a short memoria that doesn't over-justify.
 
 ## 🤝 Honest by design

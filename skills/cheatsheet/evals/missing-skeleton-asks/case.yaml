@@ -1,0 +1,11 @@
+schema_version: "1.1"
+name: missing-skeleton-asks
+expected_outcome: |
+  The statement says the teacher provides a skeleton (MeuMap.java, MevaHashMap.java)
+  that the student has not attached, and there are no notes of the topic. Before any
+  work the skill sends one message in Spanish that asks for the skeleton and for the
+  notes or examples of the hash table topic, and asks whether they want the
+  interactive guide. Then it stops: it does not rebuild the skeleton from memory and
+  creates no files.
+context:
+  scaffold_script: place-files.sh

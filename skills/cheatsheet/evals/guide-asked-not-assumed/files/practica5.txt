@@ -1,0 +1,20 @@
+FUNDAMENTOS DE PROGRAMACIÓN - 1º Grado en Ingeniería
+Práctica 5: listas y bucles
+
+Escribe un programa notas.py que:
+1. Pida al usuario cuántos alumnos hay y después la nota de cada uno (número real).
+2. Calcule la nota media de la clase.
+3. Muestre cuántos alumnos han aprobado (nota >= 5) y cuántos están por encima de
+   la media.
+
+Ejemplo de ejecución:
+    ¿Cuántos alumnos hay? 4
+    Nota del alumno 1: 7.5
+    Nota del alumno 2: 4
+    Nota del alumno 3: 6
+    Nota del alumno 4: 3.5
+    Media: 5.25
+    Aprobados: 2
+    Por encima de la media: 2
+
+Usa solo lo visto en clase hasta el tema 5.

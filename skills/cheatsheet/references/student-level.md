@@ -91,7 +91,14 @@ Level in written work is less about vocabulary than about *how much* of the mate
 - figures and dates: 0–3 in the whole answer (most students use none or one);
 - direct quotes: 0–2 short ones in an answer of a few hundred words;
 - one concrete detail per point, never a stack of them.
-If the text is over budget, cut the minor details first; the answer must still work without them.
+If the text is over budget, cut the minor details first; the answer must still work without them. This budget is for prose about readings, sources and works; in technical documents the numbers, registers and complexities are the content, so use the next subsection there instead.
+
+**Technical answers** (lab reports on code or experiments, explanations of functions, design notes, answers to theory questions in an exercise sheet). Tested against real second-year submissions (computer architecture, data structures, databases) that got good marks: the students gave each result and its main cause in the words of the slides ("con forwarding bajan los RAW porque el dato pasa directamente entre etapas"), described what each method does step by step, and stopped. The AI versions were often no longer, but each paragraph explained more than any student in the class would. So:
+- **One main cause per result**, the one the slides give. No secondary mechanisms or implementation details (in which stage a branch is resolved, why a hazard type can't occur, bit patterns, how the library does it inside), unless the statement asks for that analysis.
+- **Describe, don't anticipate.** Say what the code or the experiment does. No edge cases (null keys, empty lists, overflow), "why we didn't do X", side effects of a choice, or cost comparisons between methods unless the statement asks for them. If it asks for the cost, give the order the class uses, without the exact count.
+- **Use the numbers you have.** Read the trend in the results; don't derive theoretical maxima, ideal values or extra quantities the statement didn't ask for.
+- **No extra worked material.** Traces, worked examples, tables or diagrams only if the statement or the teacher's model asks for them.
+- **Where a range is given** ("entre 100 y 200 palabras por función"), aim at the lower third, not the middle.
 
 **Personal voice without invention.** Students react ("this surprised me", "I don't agree") and draw on their life. Reactions to the reading are fine; invented biographical facts are not (a job, a relative, what they "always thought", a class they took). If a personal example would help, leave a short placeholder for the student and say so in the summary.
 
@@ -99,8 +106,10 @@ If the text is over budget, cut the minor details first; the answer must still w
 
 ## 5. Maths and problem sets
 
+- **Answer the way the teacher's solved examples do, and no more.** If the statement only says "analiza", "calcula", "indica el coste" and the class solutions give the result with a few marks next to the code (the cost of each loop, the sum, the final order), answer that way: the result and the minimal working, a line per item. A reasoned paragraph per item only when the statement asks for it ("razona", "justifica", "explica por qué", "sin la explicación la respuesta se considerará incorrecta"), and then two or three sentences.
+- No exact counts, closed forms or alternative derivations when the class works with the order of magnitude (N(N-1)/2 when the answer is O(N²); log₁₀(N)+1 when it is O(log N)), and no comparisons with other algorithms that weren't asked.
 - Use the notation and methods from the notes (if the class does integration by parts, don't use a table method or a CAS result).
-- Show the steps a student is expected to show at that level: enough to follow the reasoning, not every algebraic micro-step and not a skip straight to the answer.
+- Show the steps the teacher's solved examples show: enough to follow the reasoning, not every algebraic micro-step.
 - Round and present results as the examples do (decimals vs fractions, units, significant figures).
 - If a computer check is useful, do it privately; don't put code in a handwritten-style answer unless the course does so.
 
@@ -128,11 +137,13 @@ The level profile says *which* tools are allowed; this section says *how much* o
 
 **Performance and optimisation goals** ("la versión concurrente debe ser más rápida", "optimiza el programa"): reach the goal with the straightforward design the statement describes, check it once, and stop. No profiling to find where the time goes, no per-thread or per-stage timing, no load-balancing or tuning passes after it already meets the goal, unless the statement asks for them. Ideas from the teacher's notes are used as the notes describe them, at the simplest level that works.
 
+**Translations and other systematic methods** (UML or ER to relational, pseudocode to code, a design method applied to a case): the core of the method goes to every element (each class becomes a relation with its key and foreign keys, `not null` where a minimum of 1 sits on that side). The extra machinery the method can add for each element (a view and an assertion per multiplicity, a trigger per rule, a check for every numeric limit in the text) is written in full only when the statement asks to implement the constraints. Otherwise write it out for one or two cases, the way the class example does, and give the rest one line each ("mínim 1 a Participa: cal una assertion com l'anterior"). A typical student covers the main constraints and leaves the rest at that level; a full block for every multiplicity is the best submission in the class, not the typical one.
+
 **Spreadsheets and data:** the calculations and charts asked for, on the data given. No dashboards, extra pivot tables or sheets "for analysis".
 
 **Maths and problem sets:** solve each problem once with the class method. A private cross-check is fine if it's quick; don't put alternative methods or generalisations in the answer.
 
-**Your own checks are not part of the work.** Verifying that the code runs, recomputing a number or rendering a file is fine and should be quick. Don't let verification grow into extra experiments, and never let it leak into the deliverable as extra results.
+**Your own checks are not part of the work.** Verifying that the code runs, recomputing a number or rendering a file is fine and should be quick. Don't let verification grow into extra experiments, and never let it leak into the deliverable as extra results. Don't build tools to check your work (an interpreter or simulator for the course's language or machine, a test harness, a data generator): if you can't run something here, check it by hand once and say in the summary that the student has to run it.
 
 ## 7. Length defaults
 
